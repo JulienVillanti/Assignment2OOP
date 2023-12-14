@@ -25,8 +25,33 @@ public Monowheel(Monowheel mn1){
 public Monowheel(int nw, double ms, int mxWeight){
 super(nw, ms);
 this.maxWeight = mxWeight;
+this.serialNum = generateSerialNumber();
 
 }
+
+    public double getMaxWeight() {
+        return maxWeight;
+    }
+
+    public void setMaxWeight(double maxWeight) {
+        this.maxWeight = maxWeight;
+    }
+
+    public long getSerialNum() {
+        return serialNum;
+    }
+
+    public void setSerialNum(long serialNum) {
+        this.serialNum = serialNum;
+    }
+
+    @Override
+    public String toString() {
+        return "Monowheel{" +
+                "maxWeight=" + maxWeight +
+                ", serialNum=" + serialNum +
+                '}';
+    }
 
     private static long generateSerialNumber() {
         return nextSerialNumber++;

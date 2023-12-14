@@ -2,6 +2,7 @@ import pkg1.WheeledTransportation;
 import pkg2.Train;
 import pkg2.Tram;
 import pkg3.Metro;
+import pkg4.Monowheel;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -13,11 +14,15 @@ public class Main {
         Train t3 = new Train(t1);
         Metro m1 = new Metro();
         Metro m2 = new Metro();
-        Tram tr1 = new Tram(4,);
+        Tram tr1 = new Tram();
+        Monowheel mn1 = new Monowheel(1, 100,2);
+        Monowheel mn2 = new Monowheel(mn1);
         System.out.println(w1);
         System.out.println(t1);
         System.out.println(t2);
         System.out.println(tr1);
+        System.out.println(mn1);
+        System.out.println(mn2);
 
 
     }
