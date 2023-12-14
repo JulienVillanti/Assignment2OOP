@@ -1,4 +1,4 @@
-package WheeledTransportation;
+package pkg1;
 
 public class WheeledTransportation {
     private int numOfWheels;
@@ -9,22 +9,21 @@ public class WheeledTransportation {
 
     public WheeledTransportation() {
         //default constructor
-        serialNumber = generateSerialNumber();
+        this.serialNumber = generateSerialNumber();
     }
 
     public WheeledTransportation(WheeledTransportation w1) {
         //copy constructor
         numOfWheels = w1.numOfWheels;
         maxSpeed = w1.maxSpeed;
-        serialNumber = w1.serialNumber;
-        serialNumber = generateSerialNumber();
+        this.serialNumber = generateSerialNumber();
     }
 
     public WheeledTransportation(int nw, double ms) {
         //parameter constructor
         numOfWheels = nw;
         maxSpeed = ms;
-        serialNumber = generateSerialNumber();
+        this.serialNumber = generateSerialNumber();
     }
 
     public int getNumOfWheels() {

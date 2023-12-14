@@ -1,4 +1,6 @@
-package WheeledTransportation;
+package pkg2;
+
+import pkg1.WheeledTransportation;
 
 public class Train extends WheeledTransportation {
     private int numOfVehicles;
@@ -15,11 +17,12 @@ public class Train extends WheeledTransportation {
 
     public Train(Train t1) {
         numOfVehicles = t1.numOfVehicles;
-        startingPoint = t1.startingPoint;
-        destinationStation = t1.destinationStation;
         setNumOfWheels(t1.getNumOfWheels());
         setMaxSpeed(t1.getMaxSpeed());
+        startingPoint = t1.startingPoint;
+        destinationStation = t1.destinationStation;
         this.serialNum = generateSerialNumber();
+
 
     }
 
