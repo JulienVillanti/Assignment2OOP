@@ -25,7 +25,7 @@ public class Tram extends Metro {
         this.serialNum = generateSerialNumber();
     }
 
-    public Tram(int nw, double ms, int numOfVehicles, String startingPoint, String destinationStation, int numStops, int yearCreation){
+    public Tram(int nw, double ms, int numOfVehicles, String startingPoint, String destinationStation, int numStops, int yearCreation) {
         super(nw, ms, numOfVehicles, startingPoint, destinationStation, numStops);
         this.yearOfCreation = yearCreation;
         this.serialNum = generateSerialNumber();
@@ -39,15 +39,29 @@ public class Tram extends Metro {
         this.yearOfCreation = yearOfCreation;
     }
 
-   //Do you add getter and setter for serial num(for all class??)
+    //Do you add getter and setter for serial num(for all class??)
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Tram other = (Tram) obj;
+
+        return super.equals(obj) &&
+                yearOfCreation == other.yearOfCreation;
+    }
 
     @Override
     public String toString() {
-        return "Tram{" +
-                "yearOfCreation=" + yearOfCreation +
-                ", serialNum=" + serialNum +
-                '}';
+        return "This tram has " + getNumOfWheels() + " wheels and a maximum speed of " + getMaxSpeed() + "km/h. It also has " + getNumOfVehicles() + " vehicles. " +
+                "The starting point is " + getStartingPoint() + " and its ending city is " + getDestinationStation() + ". The total number of stops is " + getTotalNumOfStops() +
+                " and the serial number is " + serialNum + ". It was created in " + yearOfCreation + ". ";
     }
 
     private static long generateSerialNumber() {

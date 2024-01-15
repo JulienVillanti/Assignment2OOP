@@ -1,5 +1,6 @@
 import pkg1.WheeledTransportation;
 import pkg2.Train;
+import pkg2.Tram;
 import pkg3.Metro;
 import pkg5.Aircraft;
 import pkg5.Worldwar2plane;
@@ -17,6 +18,8 @@ public class Driver {
         Train t3 = new Train(50, 350, 35, "Paris", "Marseille");
         Train t4 = new Train(t3);
         Train t5 = new Train();
+        Tram tr1 = new Tram(16, 70, 10, "Downtown", "Uptown", 10, 1999);
+        Tram tr2 = new Tram(tr1);
         Metro m1 = new Metro(20, 100, 10, "Berri-UQAM", "Sauvé", 10);
         Metro m2 = new Metro(40, 50, 20, "Toulouse", "Balma", 25);
         Metro m3 = new Metro(m1);
@@ -37,7 +40,7 @@ public class Driver {
 
 
         // Equality test
-        boolean equalsTest = wt1.equals(t1);
+        boolean equalsTest = tr1.equals(tr2);
         System.out.println("Equality test " + equalsTest);
         boolean equalsTest2 = t1.equals(t2);
         System.out.println("Equality test " + equalsTest2);

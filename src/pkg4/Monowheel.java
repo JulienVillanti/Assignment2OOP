@@ -45,12 +45,27 @@ this.serialNum = generateSerialNumber();
         this.serialNum = serialNum;
     }
 
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Monowheel other = (Monowheel) obj;
+
+        return super.equals(obj) &&
+                Double.compare(other.maxWeight, maxWeight) == 0;
+    }
+
     @Override
     public String toString() {
-        return "Monowheel{" +
-                "maxWeight=" + maxWeight +
-                ", serialNum=" + serialNum +
-                '}';
+        return "This monowheel has " + getNumOfWheels() + " wheels and a maximum speed of " + getMaxSpeed() + "km/h. " +
+                "Its maximum weight is " + maxWeight + "kgs. The serial number is " + serialNum + ". ";
     }
 
     private static long generateSerialNumber() {
