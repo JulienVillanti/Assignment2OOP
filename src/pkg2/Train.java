@@ -74,6 +74,33 @@ public class Train extends WheeledTransportation {
         Train.nextSerialNumber = nextSerialNumber;
     }
 
+
+    @Override
+    public boolean equals(Object obj) {
+        // Check if the object is the same reference
+        if (this == obj) {
+            return true;
+        }
+
+        // Check if the object is null or of a different class
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        // Call the superclass's equals method
+        if (!super.equals(obj)) {
+            return false;
+        }
+
+        // Convert the object to a Train instance
+        Train other = (Train) obj;
+
+        // Compare the values of the fields (except serialNum)
+        return numOfVehicles == other.numOfVehicles &&
+                startingPoint.equals(other.startingPoint) &&
+                destinationStation.equals(other.destinationStation);
+    }
+
     @Override
     public String toString() {
         return "This train has " + numOfVehicles + " cars. Its maximum speed is " + getMaxSpeed() + " km/h and the serial number is " + serialNum + ". The starting destination is " + startingPoint + " and it arrives in " + destinationStation + ".";

@@ -63,7 +63,7 @@ public class WheeledTransportation {
 
         WheeledTransportation other = (WheeledTransportation) obj;
 
-        return numOfWheels == other.numOfWheels && Double.compare(other.maxSpeed, maxSpeed) == 0 && serialNumber == other.serialNumber;
+        return numOfWheels == other.numOfWheels && Double.compare(other.maxSpeed, maxSpeed) == 0;
     }
 
     @Override

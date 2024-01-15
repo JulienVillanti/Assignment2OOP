@@ -49,19 +49,32 @@ public class Aircraft {
         this.serialNum = serialNum;
     }
 
-    @Override
-    public String toString() {
-        return "Aircraft{" +
-                "price=" + price +
-                ", maxElevation=" + maxElevation +
-                ", serialNum=" + serialNum +
-                '}';
-    }
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        // Check if the object is the same reference
+        if (this == obj) {
+            return true;
+        }
+
+        // Check if the object is null or of a different class
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        // Convert the object to an Aircraft instance
+        Aircraft other = (Aircraft) obj;
+
+        // Compare the values of the fields
+        return Double.compare(other.price, price) == 0 &&
+                Double.compare(other.maxElevation, maxElevation) == 0;
     }
+
+    @Override
+    public String toString() {
+        return "This aircraft has a price 0f " + price + "$. Its max elevation during flight is " + maxElevation + " and its serial number is " + serialNum + ".";
+    }
+
 
     private static long generateSerialNumber() {
         return nextSerialNumber++;

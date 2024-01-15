@@ -28,4 +28,32 @@ public class Ferry {
     private static long generateSerialNumber() {
         return nextSerialnumber++;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        // Check if the object is the same reference
+        if (this == obj) {
+            return true;
+        }
+
+        // Check if the object is null or of a different class
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        // Convert the object to a Ferry instance
+        Ferry other = (Ferry) obj;
+
+        // Compare the values of the fields (except serialNumber)
+        return Double.compare(other.maximumSpeed, maximumSpeed) == 0 &&
+                Double.compare(other.maxLoad, maxLoad) == 0;
+    }
+
+    @Override
+    public String toString() {
+        return "This ferry, serialNumber " + serialNumber + "- has a maximumSpeed of " + maximumSpeed + " km/h. " +
+                "It has a maxLoad of " + maxLoad + "kgs.";
+    }
 }
+
+

@@ -64,10 +64,9 @@ public class Metro extends Train {
 
     @Override
     public String toString() {
-        return "Metro{" +
-                "totalNumOfStops=" + totalNumOfStops +
-                ", serialNum=" + serialNum +
-                '}';
+        return "This metro has " + getNumOfWheels() + " wheels and a maximum speed of " + getMaxSpeed() + "km/h. It also has " + getNumOfVehicles() + " vehicles. " +
+                "The starting point is " + getStartingPoint() + " and its ending city is " + getDestinationStation() + ". The total number of stops is " + totalNumOfStops +
+                " and the serialNum is " + serialNum + ". ";
     }
 
     private static long generateSerialNumber() {
