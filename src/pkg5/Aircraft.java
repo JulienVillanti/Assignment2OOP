@@ -58,6 +58,11 @@ public class Aircraft {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
     private static long generateSerialNumber() {
         return nextSerialNumber++;
     }

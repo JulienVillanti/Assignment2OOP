@@ -1,5 +1,7 @@
 package pkg1;
 
+import java.util.Objects;
+
 public class WheeledTransportation {
     private int numOfWheels;
     private double maxSpeed;
@@ -52,7 +54,16 @@ public class WheeledTransportation {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        WheeledTransportation other = (WheeledTransportation) obj;
+
+        return numOfWheels == other.numOfWheels && Double.compare(other.maxSpeed, maxSpeed) == 0 && serialNumber == other.serialNumber;
     }
 
     @Override
@@ -62,6 +73,7 @@ public class WheeledTransportation {
                 ". Its maximum speed is" + maxSpeed +
                 " km/h. The serial number is " + serialNumber + ".";
     }
+
 
     private static long generateSerialNumber() {
         return nextSerialNumber++;
