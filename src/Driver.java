@@ -6,6 +6,8 @@ import pkg5.Aircraft;
 import pkg5.Worldwar2plane;
 import pkg6.Ferry;
 
+import java.util.Arrays;
+
 public class Driver {
     public static void main(String[] args) {
         WheeledTransportation wt1 = new WheeledTransportation(5, 150);
@@ -51,15 +53,16 @@ public class Driver {
         System.out.println(ww2);
 
 
-        Object[] mixedArray1 = {
+        Object[] mixedArray1 =  {
                 wt1, wt2, t1, t2, ac1, ww1, wt3, ww3, ac4, ac5, m1, m2, t3, m4, f4};
 
         Object[] mixedArray2 = {
                 wt1, wt2, t1, t2, t3, f1, wt3, wt5, m3, m1, m1, m2, t3, m4, f4, f5, f2, f3};
 
         // Call findLeastAndMostExpensiveAircraft method
-        findLeastAndMostExpensiveAircraft(mixedArray1);
-        findLeastAndMostExpensiveAircraft(mixedArray2);
+        System.out.println(Arrays.toString(mixedArray1));
+
+      findLeastAndMostExpensiveAircraft(mixedArray2);
     }
 
     public static void findLeastAndMostExpensiveAircraft(Object[] mixedArray) {

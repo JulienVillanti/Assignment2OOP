@@ -70,7 +70,7 @@ public class WheeledTransportation {
     public String toString() {
         return "This is a wheeled transportation. " +
                 "The number of wheels is " + numOfWheels +
-                ". Its maximum speed is" + maxSpeed +
+                ". Its maximum speed is " + maxSpeed +
                 " km/h. The serial number is " + serialNumber + ".";
     }
 
